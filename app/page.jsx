@@ -26,7 +26,7 @@ const DATA = {
   couple: "Hiago ♥ Kamila",
   subtitle: "1 ano de nós dois",
   heroPhrase:
-    "O destino escreve certo... mas naquele dia, ele caprichou tanto que virou poesia.",
+    "A gente não tinha noção… mas Deus sabia exatamente o que estava fazendo quando colocou você no meu caminho.",
 
   storyTitle: "Como tudo começou",
 
