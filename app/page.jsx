@@ -47,9 +47,9 @@ A gente briga às vezes, ninguém é perfeito, mas até nessas horas o amor cont
   vow:
     "Um ano depois, eu olho pra gente e penso: valeu cada passo, cada conversa, cada escolha. Não é sobre perfeição, é sobre verdade, e a nossa sempre foi real.",
   gallery: [
-    "/images/foto1.jpg",
-    "/images/foto2.jpg",
-    "/images/foto3.jpg",
+    "/public/FOTO1.jpg",
+    "/public/FOTO1.jpg",
+    "public/FOTO1.jpg",
     // ... até /images/foto19.jpg se você tiver
   ],
   date: "30/11/2025",
