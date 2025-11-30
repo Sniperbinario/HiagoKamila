@@ -1,12 +1,32 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Heart, Sparkles } from "lucide-react";
+// Removed lucide-react import to avoid createContext/build issues
+// Replaced with inline SVG components below
+
+const HeartIcon = (props) => (
+  <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden {...props}>
+    <path
+      fill="currentColor"
+      d="M12 21s-7.5-4.9-10-8.1C-0.1 7.5 3.6 3 7.3 4.6 9 5.4 10.3 7.1 12 9c1.7-1.9 3-3.6 4.7-4.4 3.7-1.6 7.4 2.9 5.3 8.3C19.5 16.1 12 21 12 21z"
+    />
+  </svg>
+);
+
+const SparklesIcon = (props) => (
+  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden {...props}>
+    <path
+      fill="currentColor"
+      d="M12 2l1.9 4.3L18 8l-4.1 1.7L12 14l-1.9-4.3L6 8l4.1-1.7L12 2zm8 14l1.2 2.7L22 21l-2.3.9L17.4 24 16 21.1 14 20l2.2-1.6L17 16l3 0z"
+    />
+  </svg>
+);
 
 const DATA = {
   couple: "Hiago ♥ Kamila",
   subtitle: "1 ano de nós dois",
   heroPhrase:
-    "O destino escreve certo… mas naquele dia, ele caprichou tanto que virou poesia.",
+    "O destino escreve certo... mas naquele dia, ele caprichou tanto que virou poesia.",
   storyTitle: "Como tudo começou",
   story: `Tudo começou de um jeito muito nosso. Depois do primeiro encontro, não precisou de muita coisa pra perceber que tinha algo diferente rolando ali. Uma semana depois, já tava claro que a gente queria continuar. Você brincando que o beijo ia decidir tudo, eu fingindo calma, mas por dentro já sabia que aquele beijo ia marcar o início de uma parada real.
 
@@ -14,34 +34,30 @@ A gente falou de futuro como se fosse uma conversa qualquer. Um apê em Águas C
 
 Eu quis conhecer sua mãe logo, porque no fundo eu já sabia onde isso ia dar. Nunca deixei você ser só minha ficante porque desde o começo você já era outra coisa pra mim. E aí, com três semanas de namoro, você viajou comigo e com a minha família inteira. Encarou todo mundo e ainda assim ficou do meu lado. Ali eu senti que a gente tinha encaixado de um jeito que não acontece sempre.
 
-Depois veio a parte mais louca e mais certa: a gente começar a morar junto. Parecia cedo pra qualquer pessoa de fora, mas pra gente… apenas aconteceu. Simples. Natural. Criamos uma rotina, fizemos planos, cuidamos das nossas coisas, aprendemos um com o outro.
+Depois veio a parte mais louca e mais certa: a gente começar a morar junto. Parecia cedo pra qualquer pessoa de fora, mas pra gente... apenas aconteceu. Simples. Natural. Criamos uma rotina, fizemos planos, cuidamos das nossas coisas, aprendemos um com o outro.
 
 Adotamos nossa gatinha, nossa filha de quatro patas que completou nossa casa e virou parte da nossa história também. E no meio dessa convivência toda, a gente descobriu que tem muita coisa em comum, mas também várias diferenças, e é isso que faz o equilíbrio funcionar.
 
 A gente briga às vezes, ninguém é perfeito, mas até nessas horas o amor continua ali, firme, do nosso jeito. E esse amor cresce. Cresce mesmo. Todo dia um pouco, do jeito certo, sendo real, sendo nosso.`,
   milestones: [
-    {
-      title: "O Primeiro Encontro",
-      text: "Onde um beijo decidiu mais do que a gente imaginava, e abriu caminho pra tudo que veio depois.",
-    },
-    {
-      title: "A Viagem em 3 Semanas",
-      text: "Quando você encarou minha família inteira logo de cara… e, mesmo assim, ficou. Ali eu percebi que a gente tinha algo diferente.",
-    },
-    {
-      title: "Nosso Primeiro Lar",
-      text: "O momento em que morar junto deixou de ser um plano distante e virou realidade, e fez tudo fazer sentido.",
-    },
+    { title: "O Primeiro Encontro", text: "Onde um beijo decidiu mais do que a gente imaginava." },
+    { title: "A Viagem em 3 Semanas", text: "Você encarou minha família toda e ainda ficou do meu lado." },
+    { title: "Nosso Primeiro Lar", text: "Quando morar junto simplesmente fez sentido." }
   ],
-  vow: "Um ano depois, eu olho pra gente e penso: valeu cada passo, cada conversa, cada escolha que fizemos juntos. Não é sobre perfeição, é sobre verdade, e a nossa sempre foi simples, firme e real. Quero seguir construindo tudo isso contigo, do nosso jeito.",
-  gallery: Array.from({ length: 19 }, (_, i) => `/images/foto${i + 1}.jpg`),
+  vow:
+    "Um ano depois, eu olho pra gente e penso: valeu cada passo, cada conversa, cada escolha. Não é sobre perfeição, é sobre verdade, e a nossa sempre foi real.",
+  gallery: [
+    "/images/foto1.jpg",
+    "/images/foto2.jpg",
+    "/images/foto3.jpg",
+    // ... até /images/foto19.jpg se você tiver
+  ],
   date: "30/11/2025",
 };
 
-export default function OneYearLove() {
+export default function Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-rose-200/60 via-white to-pink-100 text-gray-900 font-serif px-6 pb-20">
-      {/* HEADER */}
+    <div className="min-h-screen bg-gradient-to-b from-rose-200/60 via-white to-pink-100 text-gray-900 font-sans px-6 pb-20">
       <header className="text-center py-10">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
@@ -62,7 +78,6 @@ export default function OneYearLove() {
         </motion.p>
       </header>
 
-      {/* HERO PHRASE */}
       <section className="max-w-3xl mx-auto text-center my-12">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -70,37 +85,28 @@ export default function OneYearLove() {
           transition={{ duration: 0.8 }}
           className="text-2xl md:text-3xl font-light text-gray-800 leading-relaxed"
         >
-          "{DATA.heroPhrase}"
+          {DATA.heroPhrase}
         </motion.p>
       </section>
 
-      {/* STORY CARD */}
       <section className="max-w-3xl mx-auto bg-white/80 backdrop-blur-md shadow-xl rounded-3xl p-8 border border-rose-100">
-        <h2 className="text-2xl font-bold text-rose-600 mb-4 text-center">
-          {DATA.storyTitle}
-        </h2>
+        <h2 className="text-2xl font-bold text-rose-600 mb-4 text-center">{DATA.storyTitle}</h2>
 
         <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
-          {DATA.story.split("\n\n").map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
+          {DATA.story.split("\n\n").map((p, idx) => (
+            <p key={idx}>{p}</p>
           ))}
         </div>
 
         <div className="mt-6 text-center">
-          <Sparkles className="mx-auto text-rose-500" />
+          <SparklesIcon className="mx-auto text-rose-500" />
         </div>
 
-        <p className="mt-6 text-gray-700 text-lg italic leading-relaxed text-center">
-          “{DATA.vow}”
-        </p>
+        <p className="mt-6 text-gray-700 text-lg italic leading-relaxed text-center">“{DATA.vow}”</p>
 
-        {/* MILESTONES */}
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
           {DATA.milestones.map((m, i) => (
-            <div
-              key={i}
-              className="bg-rose-50 p-4 rounded-xl shadow-sm text-center"
-            >
+            <div key={i} className="bg-rose-50 p-4 rounded-xl shadow-sm text-center">
               <div className="font-semibold text-rose-600">{m.title}</div>
               <div className="text-sm text-gray-600 mt-2">{m.text}</div>
             </div>
@@ -108,11 +114,8 @@ export default function OneYearLove() {
         </div>
       </section>
 
-      {/* FINAL GALLERY */}
       <section className="max-w-4xl mx-auto mt-16">
-        <h3 className="text-center text-2xl font-bold text-rose-600 mb-6">
-          Nossos Momentos
-        </h3>
+        <h3 className="text-center text-2xl font-bold text-rose-600 mb-6">Nossos Momentos</h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {DATA.gallery.map((src, i) => (
@@ -130,13 +133,10 @@ export default function OneYearLove() {
         </div>
       </section>
 
-      {/* FOOTER */}
       <footer className="text-center mt-16 text-gray-700">
-        <p className="text-sm">
-          Com amor, Hiago → Kamila • {DATA.date}
-        </p>
+        <p className="text-sm">Com amor, Hiago → Kamila • {DATA.date}</p>
         <div className="mx-auto mt-2 w-8 h-8">
-          <Heart className="text-rose-500" />
+          <HeartIcon className="text-rose-500" />
         </div>
       </footer>
     </div>
