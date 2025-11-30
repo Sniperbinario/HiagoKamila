@@ -2,13 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Heart, Sparkles } from "lucide-react";
 
-// Romantic, elegant anniversary website
-// Dedicated to Hiago & Kamila , 1 ano de amor
-
 const DATA = {
   couple: "Hiago ♥ Kamila",
   subtitle: "1 ano de nós dois",
-  heroPhrase: "O destino escreve certo… mas naquele dia, ele caprichou tanto que virou poesia.",
+  heroPhrase:
+    "O destino escreve certo… mas naquele dia, ele caprichou tanto que virou poesia.",
   storyTitle: "Como tudo começou",
   story: `Tudo começou de um jeito muito nosso. Depois do primeiro encontro, não precisou de muita coisa pra perceber que tinha algo diferente rolando ali. Uma semana depois, já tava claro que a gente queria continuar. Você brincando que o beijo ia decidir tudo, eu fingindo calma, mas por dentro já sabia que aquele beijo ia marcar o início de uma parada real.
 
@@ -33,30 +31,10 @@ A gente briga às vezes, ninguém é perfeito, mas até nessas horas o amor cont
     {
       title: "Nosso Primeiro Lar",
       text: "O momento em que morar junto deixou de ser um plano distante e virou realidade, e fez tudo fazer sentido.",
-    }
+    },
   ],
   vow: "Um ano depois, eu olho pra gente e penso: valeu cada passo, cada conversa, cada escolha que fizemos juntos. Não é sobre perfeição, é sobre verdade, e a nossa sempre foi simples, firme e real. Quero seguir construindo tudo isso contigo, do nosso jeito.",
-  gallery: [
-    "/images/foto1.jpg",
-    "/images/foto2.jpg",
-    "/images/foto3.jpg",
-    "/images/foto4.jpg",
-    "/images/foto5.jpg",
-    "/images/foto6.jpg",
-    "/images/foto7.jpg",
-    "/images/foto8.jpg",
-    "/images/foto9.jpg",
-    "/images/foto10.jpg",
-    "/images/foto11.jpg",
-    "/images/foto12.jpg",
-    "/images/foto13.jpg",
-    "/images/foto14.jpg",
-    "/images/foto15.jpg",
-    "/images/foto16.jpg",
-    "/images/foto17.jpg",
-    "/images/foto18.jpg",
-    "/images/foto19.jpg",
-  ],
+  gallery: Array.from({ length: 19 }, (_, i) => `/images/foto${i + 1}.jpg`),
   date: "30/11/2025",
 };
 
@@ -73,6 +51,7 @@ export default function OneYearLove() {
         >
           {DATA.couple}
         </motion.h1>
+
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -95,20 +74,15 @@ export default function OneYearLove() {
         </motion.p>
       </section>
 
-      {/* MESSAGE CARD */}
+      {/* STORY CARD */}
       <section className="max-w-3xl mx-auto bg-white/80 backdrop-blur-md shadow-xl rounded-3xl p-8 border border-rose-100">
-        <h2 className="text-2xl font-bold text-rose-600 mb-4 text-center">{DATA.storyTitle}</h2>
+        <h2 className="text-2xl font-bold text-rose-600 mb-4 text-center">
+          {DATA.storyTitle}
+        </h2>
+
         <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
           {DATA.story.split("\n\n").map((paragraph, index) => (
-            <>
-              <p key={index}>{paragraph}</p>
-              {DATA.gallery[index] && (
-                <img
-                  src={DATA.gallery[index]}
-                  className="w-full rounded-2xl shadow-lg my-4"
-                />
-              )}
-            </>
+            <p key={index}>{paragraph}</p>
           ))}
         </div>
 
@@ -116,12 +90,17 @@ export default function OneYearLove() {
           <Sparkles className="mx-auto text-rose-500" />
         </div>
 
-        <p className="mt-6 text-gray-700 text-lg italic leading-relaxed text-center">“{DATA.vow}”</p>
+        <p className="mt-6 text-gray-700 text-lg italic leading-relaxed text-center">
+          “{DATA.vow}”
+        </p>
 
-        {/* Milestones */}
+        {/* MILESTONES */}
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
           {DATA.milestones.map((m, i) => (
-            <div key={i} className="bg-rose-50 p-4 rounded-xl shadow-sm text-center">
+            <div
+              key={i}
+              className="bg-rose-50 p-4 rounded-xl shadow-sm text-center"
+            >
               <div className="font-semibold text-rose-600">{m.title}</div>
               <div className="text-sm text-gray-600 mt-2">{m.text}</div>
             </div>
@@ -129,15 +108,18 @@ export default function OneYearLove() {
         </div>
       </section>
 
-      {/* GALLERY */}
+      {/* FINAL GALLERY */}
       <section className="max-w-4xl mx-auto mt-16">
-        <h3 className="text-center text-2xl font-bold text-rose-600 mb-6">Nossos Momentos</h3>
+        <h3 className="text-center text-2xl font-bold text-rose-600 mb-6">
+          Nossos Momentos
+        </h3>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {DATA.gallery.map((src, i) => (
             <motion.img
               key={i}
               src={src}
-              alt={`galeria-${i}`}
+              alt={`foto-${i}`}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -150,7 +132,9 @@ export default function OneYearLove() {
 
       {/* FOOTER */}
       <footer className="text-center mt-16 text-gray-700">
-        <p className="text-sm">Com amor, Hiago → Kamila • {DATA.date}</p>
+        <p className="text-sm">
+          Com amor, Hiago → Kamila • {DATA.date}
+        </p>
         <div className="mx-auto mt-2 w-8 h-8">
           <Heart className="text-rose-500" />
         </div>
