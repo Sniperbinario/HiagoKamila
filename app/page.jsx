@@ -1,12 +1,14 @@
-"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { Heart, Sparkles } from "lucide-react";
 
+// Romantic, elegant anniversary website
+// Dedicated to Hiago & Kamila , 1 ano de amor
+
 const DATA = {
   couple: "Hiago ♥ Kamila",
   subtitle: "1 ano de nós dois",
-  heroPhrase: "O destino escreve certo... mas naquele dia, ele caprichou tanto que virou poesia.",
+  heroPhrase: "O destino escreve certo… mas naquele dia, ele caprichou tanto que virou poesia.",
   storyTitle: "Como tudo começou",
   story: `Tudo começou de um jeito muito nosso. Depois do primeiro encontro, não precisou de muita coisa pra perceber que tinha algo diferente rolando ali. Uma semana depois, já tava claro que a gente queria continuar. Você brincando que o beijo ia decidir tudo, eu fingindo calma, mas por dentro já sabia que aquele beijo ia marcar o início de uma parada real.
 
@@ -14,61 +16,109 @@ A gente falou de futuro como se fosse uma conversa qualquer. Um apê em Águas C
 
 Eu quis conhecer sua mãe logo, porque no fundo eu já sabia onde isso ia dar. Nunca deixei você ser só minha ficante porque desde o começo você já era outra coisa pra mim. E aí, com três semanas de namoro, você viajou comigo e com a minha família inteira. Encarou todo mundo e ainda assim ficou do meu lado. Ali eu senti que a gente tinha encaixado de um jeito que não acontece sempre.
 
-Depois veio a parte mais louca e mais certa: a gente começar a morar junto. Parecia cedo pra qualquer pessoa de fora, mas pra gente... apenas aconteceu. Simples. Natural. Criamos uma rotina, fizemos planos, cuidamos das nossas coisas, aprendemos um com o outro.
+Depois veio a parte mais louca e mais certa: a gente começar a morar junto. Parecia cedo pra qualquer pessoa de fora, mas pra gente… apenas aconteceu. Simples. Natural. Criamos uma rotina, fizemos planos, cuidamos das nossas coisas, aprendemos um com o outro.
 
 Adotamos nossa gatinha, nossa filha de quatro patas que completou nossa casa e virou parte da nossa história também. E no meio dessa convivência toda, a gente descobriu que tem muita coisa em comum, mas também várias diferenças, e é isso que faz o equilíbrio funcionar.
 
 A gente briga às vezes, ninguém é perfeito, mas até nessas horas o amor continua ali, firme, do nosso jeito. E esse amor cresce. Cresce mesmo. Todo dia um pouco, do jeito certo, sendo real, sendo nosso.`,
   milestones: [
-    { title: "O Primeiro Encontro", text: "Onde um beijo decidiu mais do que a gente imaginava." },
-    { title: "A Viagem em 3 Semanas", text: "Você encarou minha família toda e ainda ficou do meu lado." },
-    { title: "Nosso Primeiro Lar", text: "Quando morar junto simplesmente fez sentido." }
+    {
+      title: "O Primeiro Encontro",
+      text: "Onde um beijo decidiu mais do que a gente imaginava, e abriu caminho pra tudo que veio depois.",
+    },
+    {
+      title: "A Viagem em 3 Semanas",
+      text: "Quando você encarou minha família inteira logo de cara… e, mesmo assim, ficou. Ali eu percebi que a gente tinha algo diferente.",
+    },
+    {
+      title: "Nosso Primeiro Lar",
+      text: "O momento em que morar junto deixou de ser um plano distante e virou realidade, e fez tudo fazer sentido.",
+    }
   ],
-  vow: "Um ano depois, eu olho pra gente e penso: valeu cada passo, cada conversa, cada escolha. Não é sobre perfeição, é sobre verdade, e a nossa sempre foi real.",
+  vow: "Um ano depois, eu olho pra gente e penso: valeu cada passo, cada conversa, cada escolha que fizemos juntos. Não é sobre perfeição, é sobre verdade, e a nossa sempre foi simples, firme e real. Quero seguir construindo tudo isso contigo, do nosso jeito.",
   gallery: [
-    "https://share.icloud.com/photos/04aFZcEhnTN6J7ajmMGJ05wPA",
-    "https://share.icloud.com/photos/04aFZcEhnTN6J7ajmMGJ05wPA",
-    "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=900&q=60"
+    "/images/foto1.jpg",
+    "/images/foto2.jpg",
+    "/images/foto3.jpg",
+    "/images/foto4.jpg",
+    "/images/foto5.jpg",
+    "/images/foto6.jpg",
+    "/images/foto7.jpg",
+    "/images/foto8.jpg",
+    "/images/foto9.jpg",
+    "/images/foto10.jpg",
+    "/images/foto11.jpg",
+    "/images/foto12.jpg",
+    "/images/foto13.jpg",
+    "/images/foto14.jpg",
+    "/images/foto15.jpg",
+    "/images/foto16.jpg",
+    "/images/foto17.jpg",
+    "/images/foto18.jpg",
+    "/images/foto19.jpg",
   ],
-  date: "30/11/2024",
+  date: "30/11/2025",
 };
 
-export default function Page() {
+export default function OneYearLove() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-rose-200/60 via-white to-pink-100 text-gray-900 font-sans px-6 pb-20">
+    <div className="min-h-screen bg-gradient-to-b from-rose-200/60 via-white to-pink-100 text-gray-900 font-serif px-6 pb-20">
+      {/* HEADER */}
       <header className="text-center py-10">
-        <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
-          className="text-5xl font-bold tracking-tight">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl font-bold tracking-tight"
+        >
           {DATA.couple}
         </motion.h1>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.8 }}
-          className="mt-2 text-lg text-gray-700 italic">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          className="mt-2 text-lg text-gray-700 italic"
+        >
           {DATA.subtitle}
         </motion.p>
       </header>
 
+      {/* HERO PHRASE */}
       <section className="max-w-3xl mx-auto text-center my-12">
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
-          className="text-2xl md:text-3xl font-light text-gray-800 leading-relaxed">
-          {DATA.heroPhrase}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-2xl md:text-3xl font-light text-gray-800 leading-relaxed"
+        >
+          "{DATA.heroPhrase}"
         </motion.p>
       </section>
 
+      {/* MESSAGE CARD */}
       <section className="max-w-3xl mx-auto bg-white/80 backdrop-blur-md shadow-xl rounded-3xl p-8 border border-rose-100">
         <h2 className="text-2xl font-bold text-rose-600 mb-4 text-center">{DATA.storyTitle}</h2>
-
-        <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-line">
-          {DATA.story}
-        </p>
+        <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
+          {DATA.story.split("\n\n").map((paragraph, index) => (
+            <>
+              <p key={index}>{paragraph}</p>
+              {DATA.gallery[index] && (
+                <img
+                  src={DATA.gallery[index]}
+                  className="w-full rounded-2xl shadow-lg my-4"
+                />
+              )}
+            </>
+          ))}
+        </div>
 
         <div className="mt-6 text-center">
           <Sparkles className="mx-auto text-rose-500" />
         </div>
 
-        <p className="mt-6 text-gray-700 text-lg italic leading-relaxed text-center">
-          {DATA.vow}
-        </p>
+        <p className="mt-6 text-gray-700 text-lg italic leading-relaxed text-center">“{DATA.vow}”</p>
 
+        {/* Milestones */}
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
           {DATA.milestones.map((m, i) => (
             <div key={i} className="bg-rose-50 p-4 rounded-xl shadow-sm text-center">
@@ -79,12 +129,15 @@ export default function Page() {
         </div>
       </section>
 
+      {/* GALLERY */}
       <section className="max-w-4xl mx-auto mt-16">
         <h3 className="text-center text-2xl font-bold text-rose-600 mb-6">Nossos Momentos</h3>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {DATA.gallery.map((src, i) => (
-            <motion.img key={i} src={src} alt={`galeria-${i}`}
+            <motion.img
+              key={i}
+              src={src}
+              alt={`galeria-${i}`}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -95,6 +148,7 @@ export default function Page() {
         </div>
       </section>
 
+      {/* FOOTER */}
       <footer className="text-center mt-16 text-gray-700">
         <p className="text-sm">Com amor, Hiago → Kamila • {DATA.date}</p>
         <div className="mx-auto mt-2 w-8 h-8">
