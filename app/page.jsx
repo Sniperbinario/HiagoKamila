@@ -47,7 +47,7 @@ A gente briga às vezes, ninguém é perfeito, mas até nessas horas o amor cont
 
   // ====== AQUI É A PARTE CORRIGIDA ======
   // use caminhos REAIS para suas imagens
-  gallery: Array.from({ length: 17 }, (_, i) => `/images/FOTO${i + 1}.JPG`),
+  gallery: Array.from({ length: 10 }, (_, i) => `/images/FOTO${i + 1}.JPG`),
 
   date: "30/11/2025",
 };
